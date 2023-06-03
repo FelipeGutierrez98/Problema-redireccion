@@ -1,0 +1,52 @@
+
+
+
+<mat-toolbar>
+    <button
+      mat-icon-button
+      *ngIf="sidenav.mode === 'over'"
+      (click)="sidenav.toggle()"
+    >
+      <mat-icon *ngIf="!sidenav.opened"> menu </mat-icon>
+      <mat-icon *ngIf="sidenav.opened"> close </mat-icon>
+    </button>
+    <span>CHECK IN</span>
+  </mat-toolbar>
+  
+  <mat-sidenav-container class="example-container">
+    <mat-sidenav #sidenav="matSidenav" mode="side" opened>
+      <img
+        class="avatar mat-elevation-z8"
+        src="../assets/img/Logo_Avianca_2020.jpg"
+        alt=""
+      />
+      <h4 class="name">AVIANCA</h4>
+      <p class="designation">AEROLINEA</p>
+  
+      <mat-divider></mat-divider>
+  
+      <button mat-button class="menu-button">
+        <mat-icon>person</mat-icon>
+        <span>Crear</span>
+      </button>
+      <button mat-button class="menu-button">
+        <mat-icon>person</mat-icon>
+        <span>Lista</span>
+      </button>
+      <button mat-button class="menu-button">
+        <mat-icon>person</mat-icon>
+        <span>Interes</span>
+      </button>
+      <mat-divider></mat-divider>
+      <button mat-button class="menu-button">
+        <mat-icon>logout</mat-icon>
+        <span>Salir</span>
+      </button>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <div class="content mat-elevation-z8">
+        <list-cars></list-cars>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  
